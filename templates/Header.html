@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TB QUESTION BANK</title>
+    <link rel="icon" href="{% static 'images/tb-icon.png' %}" sizes="30x30" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/Header.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<header>
+
+    <div class="logo">
+        <img src="{% static 'images/tb-icon.png' %}" alt="Target Board Logo">
+        <h2>TB QUESTION BANK</h2>
+    </div>
+
+    <nav>
+
+        <a href="{% url 'home' %}">Home</a>
+
+        <a href="{% url 'quizzes' %}">Quizzes</a>
+
+        <a href="#">Demo</a>
+
+        <a href="#">About</a>
+
+    </nav>
+
+    <a href="https://t.me/telebotquizbot">
+    <button class="cta-button">Open Quiz Bot</button>
+    </a>
+</header>

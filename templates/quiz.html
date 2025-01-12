@@ -1,0 +1,66 @@
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">&ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.min.css">-->
+
+
+<!--</head>-->
+<!--<body>-->
+
+{% include 'header.html' %}
+<main>
+{% if quiz %}
+
+    <h2>{{ quiz.title }}</h2>
+    <h2>{{ quiz.description }}</h2>
+        <table id="QuestionsTable" border="1" >
+            <thead>
+            <tr>
+                <th>Question</th>
+                <th>OptionA</th>
+                <th>OptionB</th>
+                <th>OptionC</th>
+                <th>OptionD</th>
+                <th>OptionE</th>
+                <th>Answer</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for q in questions %}
+
+            <tr>
+                <td>{{q.question_hin | safe}}</td>
+                <td>{{q.option1_hin | safe}}</td>
+                <td>{{q.option2_hin | safe}}</td>
+                <td>{{q.option3_hin | safe }}</td>
+                <td>{{q.option4_hin | safe }}</td>
+                <td>{{q.option5_hin | safe }}</td>
+                <td>{{q.answer | safe }}</td>
+
+            </tr>
+
+            {% endfor %}
+             </tbody>
+        </table>
+    {% else %}
+        <h1>No data found!</h1>
+    {% endif %}
+
+
+
+</main>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>-->
+<script src="https://cdn.datatables.net/2.2.1/js/dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+    $('#QuestionsTable').DataTable();
+});
+</script>
+</html>
